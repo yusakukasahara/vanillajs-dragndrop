@@ -7,9 +7,12 @@ fill.addEventListener('dragend', dragEnd);
 
 // Drag Functions
 function dragStart() {
-  console.log('start');
+  console.log('grabbed');
+  this.className += ' hold';
+  setTimeout(() => (this.className = 'invisible'), 0);
 }
 
 function dragEnd() {
-  console.log('end');
+  console.log('released');
+  this.className = 'fill';
 }
